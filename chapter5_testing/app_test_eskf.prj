@@ -1,0 +1,106 @@
+<deployment-project plugin="plugin.webdeploy" plugin-version="1.0">
+  <configuration file="/home/m0/code/Code_Quaternion-kinematics-for-the-error-state-Kalman-filter/chapter5_testing/app_test_eskf.prj" location="/home/m0/code/Code_Quaternion-kinematics-for-the-error-state-Kalman-filter/chapter5_testing" name="app_test_eskf" target="target.webdeploy" target-name="Web App Compiler">
+    <param.appname>app_test_eskf</param.appname>
+    <param.version>1.0</param.version>
+    <param.displayname>app_test_eskf</param.displayname>
+    <param.authnamewatermark />
+    <param.summary />
+    <param.screenshot>/tmp/tp81bb04aa_5e55_4a88_aa36_df659cc2afdc.png</param.screenshot>
+    <param.intermediate>${PROJECT_ROOT}/app_test_eskf</param.intermediate>
+    <param.files.only>${PROJECT_ROOT}/app_test_eskf</param.files.only>
+    <param.output>/home/m0/code/Code_Quaternion-kinematics-for-the-error-state-Kalman-filter/chapter5_testing_server</param.output>
+    <param.logdir>${PROJECT_ROOT}/app_test_eskf</param.logdir>
+    <param.target.type>subtarget.web.app</param.target.type>
+    <param.user.defined.mcr.options />
+    <param.support.packages />
+    <unset>
+      <param.version />
+      <param.displayname />
+      <param.authnamewatermark />
+      <param.summary />
+      <param.intermediate />
+      <param.files.only />
+      <param.logdir />
+      <param.target.type />
+      <param.user.defined.mcr.options />
+      <param.support.packages />
+    </unset>
+    <fileset.web.main>
+      <file>${PROJECT_ROOT}/app_test_eskf_r2017b.mlapp</file>
+    </fileset.web.main>
+    <fileset.resources />
+    <fileset.depfun>
+      <file>${PROJECT_ROOT}/Integrate.m</file>
+      <file>${PROJECT_ROOT}/generate_data.m</file>
+      <file>${PROJECT_ROOT}/plot_generate_data.m</file>
+      <file>${PROJECT_ROOT}/plot_integration.m</file>
+    </fileset.depfun>
+    <fileset.package />
+    <build-deliverables>
+      <file location="${PROJECT_ROOT}/app_test_eskf" name="app_test_eskf.ctf" optional="false">/home/m0/code/Code_Quaternion-kinematics-for-the-error-state-Kalman-filter/chapter5_testing/app_test_eskf/app_test_eskf.ctf</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>/usr/local/MATLAB/R2018b</root>
+      <toolboxes>
+        <toolbox name="matlabcoder" />
+        <toolbox name="embeddedcoder" />
+        <toolbox name="gpucoder" />
+        <toolbox name="fixedpoint" />
+        <toolbox name="matlabhdlcoder" />
+        <toolbox name="polyspacebugfinder" />
+        <toolbox name="neuralnetwork" />
+      </toolboxes>
+      <toolbox>
+        <matlabcoder>
+          <enabled>true</enabled>
+        </matlabcoder>
+      </toolbox>
+      <toolbox>
+        <embeddedcoder>
+          <enabled>true</enabled>
+        </embeddedcoder>
+      </toolbox>
+      <toolbox>
+        <gpucoder>
+          <enabled>true</enabled>
+        </gpucoder>
+      </toolbox>
+      <toolbox>
+        <fixedpoint>
+          <enabled>true</enabled>
+        </fixedpoint>
+      </toolbox>
+      <toolbox>
+        <matlabhdlcoder>
+          <enabled>true</enabled>
+        </matlabhdlcoder>
+      </toolbox>
+      <toolbox>
+        <polyspacebugfinder>
+          <enabled>true</enabled>
+        </polyspacebugfinder>
+      </toolbox>
+      <toolbox>
+        <neuralnetwork>
+          <enabled>true</enabled>
+        </neuralnetwork>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>true</unix>
+      <mac>false</mac>
+      <windows>false</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>true</linux>
+      <solaris>false</solaris>
+      <osver>4.15.0-74-generic</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>glnxa64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>
