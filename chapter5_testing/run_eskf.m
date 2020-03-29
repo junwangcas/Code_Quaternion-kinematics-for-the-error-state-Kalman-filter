@@ -1,6 +1,8 @@
-[data_GT, data_measure] = generate_data(0, 0);
-
-Sigma_sn = 0.1;
+function [eskf_result] = run_eskf(app)
+data_GT = app.data_GT;
+data_measure = app.data_measure;
+gps_hz = app.gps_hz;
+Sigma_sn = app.Sigma_sn;
 
 x = [data_GT.s(1);data_GT.v(1)];
 deltax = [0; 0];
@@ -9,9 +11,8 @@ xs = x;
 deltaxs = deltax;
 Ps = {length(data_GT.t)};
 Ps{1} = P;
+ts = data_GT.t(1);
 correction_xs = [];
-
-
 DeltaT = data_GT.t(2) - data_GT.t(1);
 for i = 2:length(data_GT.t)
     % prediction;
@@ -25,11 +26,11 @@ for i = 2:length(data_GT.t)
     P = F*P*F';
     
     % update 
-    if mod(i, 10) == 0
+    if mod(i, 100/gps_hz) == 0
         V = Sigma_sn;
         H = [1, 0];
         K = P*H'*inv(H*P*H' + V);
-        y = data_GT.s(i);
+        y = data_measure.s(i);
         deltax = K*(y - (x(1) + deltax(1)));
         P = (eye(2) - K*H) * P;
         
@@ -44,10 +45,15 @@ for i = 2:length(data_GT.t)
     xs = cat(2, xs, x);
     deltaxs = cat(2, deltaxs, deltax);
     Ps{i} = P;
+    ts = cat(1, ts, data_GT.t(i));
+end
+eskf_result.xs = xs;
+eskf_result.correction_xs = correction_xs;
+eskf_result.deltaxs = deltaxs;
+eskf_result.ts = ts;
 end
 
-plot(xs(1,:));
-hold on;plot(xs(2,:));
+function visualize_eskf(app)
 
-figure;
-plot(correction_xs(2,:));
+end
+
