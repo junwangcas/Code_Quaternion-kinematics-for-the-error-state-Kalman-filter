@@ -1,1 +1,3 @@
 *.m~
+eigen_quat/.idea/
+eigen_quat/cmake-build-debug/

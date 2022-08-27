@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.0.2)
+project(beginner_tutorials)
+find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs)
+find_package(Eigen3 REQUIRED)
+catkin_package()
+include_directories(${catkin_INCLUDE_DIRS} ${EIGEN3_INCLUDE_DIR})
+#add_executable(visualize_pose src/visualize_pose.cpp)
+#target_link_libraries(visualize_pose ${catkin_LIBRARIES})
+
+add_executable(quaternion_test src/quaternion_test.cpp src/quaternion_test_chapters.cpp)
+target_link_libraries(quaternion_test ${catkin_LIBRARIES})
