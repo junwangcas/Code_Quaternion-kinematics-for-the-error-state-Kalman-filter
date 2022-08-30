@@ -18,6 +18,11 @@ public:
 public:
     void Chapter12();
 
+private:
+    void PrintQuat(const Eigen::Quaterniond &q);
+    void PrintSection(const std::string chapter, const std::string section);
+    Eigen::Quaterniond GetQuat30();
+
 };
 
 
